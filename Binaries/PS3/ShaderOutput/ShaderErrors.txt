@@ -1,0 +1,1 @@
+C:\depot\UnrealEngine3\Engine\Shaders\WorkingDirectory\11604\4\/HeightFogCommon.usf(48) : warning C7011: implicit cast from "half4" to "half3"

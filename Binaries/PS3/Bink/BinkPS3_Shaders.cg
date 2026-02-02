@@ -1,0 +1,77 @@
+
+struct VSHInput
+{
+	float2 Pos : POSITION;
+};
+
+struct VSHOutput
+{
+	float4 Pos : POSITION;
+	float2 T0: TEXCOORD0;
+};
+
+uniform float4 Adjust;
+
+VSHOutput VertexShader( VSHInput In )
+{
+	VSHOutput Out;
+    Out.Pos = float4(In.Pos * Adjust.zw + Adjust.xy, 0, 1);
+	Out.T0 = In.Pos;
+	return Out;
+}
+
+//
+// simple pixel shader to apply the yuvtorgb matrix
+//
+
+uniform sampler2D YplaneNPA;
+uniform sampler2D cRplaneNPA;
+uniform sampler2D cBplaneNPA;
+uniform float AlphaNPA;
+
+float4 YCrCbToRGB( float2 texcoord: TEXCOORD0 ) : COLOR
+{
+	float4 c;
+	float4 p;
+	const float4  tor = float4( 1.164123535f, 1.595794678f, 0.0f, -0.87065506f );
+	const float4  tog = float4( 1.164123535f, -0.813476563f, -0.391448975f, 0.529705048f );
+	const float4  tob = float4( 1.164123535f,  0.0f, 2.017822266f, -1.081668854f );
+	c.x = tex2D( YplaneNPA, texcoord ).x;
+	c.y = tex2D( cRplaneNPA, texcoord ).x;
+	c.z = tex2D( cBplaneNPA, texcoord ).x;
+	c.w = 1.0f;
+	p.x = dot( tor, c );
+	p.y = dot( tog, c );
+	p.z = dot( tob, c );
+	p.w = AlphaNPA;
+	return p;
+}
+
+//
+// simple pixel shader to apply the yuvtorgb matrix with alpha
+//
+
+uniform sampler2D Yplane;
+uniform sampler2D cRplane;
+uniform sampler2D cBplane;
+uniform sampler2D Aplane;
+uniform float Alpha;
+
+float4 YCrCbAToRGBA( float2 texcoord: TEXCOORD0 ) : COLOR
+{
+	float4 c;
+	float4 p;
+	const float4  tor = float4( 1.164123535f, 1.595794678f, 0.0f, -0.87065506f );
+	const float4  tog = float4( 1.164123535f, -0.813476563f, -0.391448975f, 0.529705048f );
+	const float4  tob = float4( 1.164123535f,  0.0f, 2.017822266f, -1.081668854f );
+	c.x = tex2D( Yplane, texcoord ).x;
+	c.y = tex2D( cRplane, texcoord ).x;
+	c.z = tex2D( cBplane, texcoord ).x;
+	c.w = 1.0f;
+	p.w = tex2D( Aplane, texcoord ).x;
+	p.x = dot( tor, c );
+	p.y = dot( tog, c );
+	p.z = dot( tob, c );
+	p.w *= Alpha;
+	return p;
+}
