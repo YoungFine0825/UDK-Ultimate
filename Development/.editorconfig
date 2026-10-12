@@ -1,0 +1,29 @@
+# UDK-Ultimate / Unreal Engine 3 coding conventions
+# 与现有源码保持一致：C++ 使用制表符缩进，源码为 CRLF
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+[*.{cpp,h,inl}]
+indent_style = tab
+indent_size = 4
+
+[*.{c,h}]
+indent_style = tab
+indent_size = 4
+
+[*.cs]
+indent_style = space
+indent_size = 4
+
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{uc,uci,usf,ush,fx}]
+indent_style = tab
+indent_size = 4

@@ -1,0 +1,84 @@
+{
+  "files.associations": {
+    "*.uc": "unrealscript",
+    "*.uci": "unrealscript",
+    "*.uc2": "unrealscript",
+    "*.int": "ini",
+    "*.ini": "ini",
+    "*.usf": "hlsl",
+    "*.ush": "hlsl",
+    "*.fx": "hlsl",
+    "*.vsh": "hlsl",
+    "*.fxc": "hlsl",
+    "*.vcproj": "xml",
+    "*.vsprops": "xml",
+    "*.vsmacros": "xml",
+    "*.dox": "plaintext"
+  },
+  "files.encoding": "utf8",
+  "files.eol": "\r\n",
+  "files.trimTrailingWhitespace": false,
+  "files.insertFinalNewline": false,
+  "files.exclude": {
+    "**/Intermediate": true,
+    "**/*.ncb": true,
+    "**/*.suo": true,
+    "**/*.user": true,
+    "**/*.obj": true,
+    "**/*.pdb": true,
+    "**/*.ipdb": true,
+    "**/*.dep": true,
+    "**/*.exp": true,
+    "**/*.lib": true,
+    "**/*.dll": true,
+    "**/*.exe": true,
+    "**/*.tlog": true
+  },
+  "search.exclude": {
+    "**/Intermediate": true,
+    "**/External": true,
+    "**/*.obj": true,
+    "**/*.pdb": true,
+    "**/*.ncb": true
+  },
+  "editor.tabSize": 4,
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "editor.rulers": [
+    120
+  ],
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "off",
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": null,
+  "C_Cpp.default.cppStandard": "c++03",
+  "C_Cpp.default.cStandard": "c89",
+  "C_Cpp.default.intelliSenseMode": "windows-msvc-x86",
+  "C_Cpp.default.defines": [
+    "WIN32",
+    "_WIN32",
+    "WITH_EDITOR=1",
+    "WITH_SERVER_CODE=1",
+    "UNICODE",
+    "_UNICODE",
+    "FINAL_RELEASE=0"
+  ],
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.intelliSenseEngine": "default",
+  "[cpp]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
+  },
+  "[c]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
+  },
+  "[csharp]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  }
+}

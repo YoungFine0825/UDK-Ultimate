@@ -1,0 +1,113 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build: UDKGame Win32 Debug (Build.bat)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\Src\\Targets\\Build.bat",
+      "args": [
+        "UDKGame",
+        "Win32",
+        "Debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\Src\\Targets"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build: UDKGame Win32 Release (Build.bat)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\Src\\Targets\\Build.bat",
+      "args": [
+        "UDKGame",
+        "Win32",
+        "Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\Src\\Targets"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build: UDKGame Win64 Debug (Build.bat)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\Src\\Targets\\Build.bat",
+      "args": [
+        "UDKGame",
+        "Win64",
+        "Debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\Src\\Targets"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Rebuild: UnrealBuildTool only",
+      "type": "shell",
+      "command": "msbuild",
+      "args": [
+        "${workspaceFolder}\\Src\\UnrealBuildTool\\UnrealBuildTool.csproj",
+        "/p:Configuration=Release",
+        "/p:Platform=Any CPU",
+        "/v:minimal",
+        "/nologo"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\Src"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Clean: UDKGame (CleanGame.bat)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\Src\\Targets\\CleanGame.bat",
+      "args": [],
+      "options": {
+        "cwd": "${workspaceFolder}\\Src\\Targets"
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Open: UDK_PC.sln (Visual Studio 2008)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\Src\\UDK_PC.sln",
+      "options": {
+        "cwd": "${workspaceFolder}\\Src"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Win32 Debug (UnrealBuildTool)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/Src/Windows/../Binaries/Win32/UDKGame.exe",
+      "args": [
+        "UDKGame",
+        "-log"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Src",
+      "environment": [],
+      "console": "externalTerminal"
+    },
+    {
+      "name": "Win64 Debug (UnrealBuildTool)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/Src/Windows/../../Binaries/Win64/UDKGame.exe",
+      "args": [
+        "UDKGame",
+        "-log"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Src",
+      "environment": [],
+      "console": "externalTerminal"
+    }
+  ]
+}
