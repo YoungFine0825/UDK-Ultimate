@@ -5,9 +5,8 @@
       "name": "Win32 Debug (UnrealBuildTool)",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/Src/Windows/../Binaries/Win32/UDKGame.exe",
+      "program": "${workspaceFolder}/../Binaries/Win32/UDKGame-Win32-Debug.exe",
       "args": [
-        "UDKGame",
         "-log"
       ],
       "stopAtEntry": false,
@@ -19,9 +18,8 @@
       "name": "Win64 Debug (UnrealBuildTool)",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/Src/Windows/../../Binaries/Win64/UDKGame.exe",
+      "program": "${workspaceFolder}/../Binaries/Win64/UDKGame-Win64-Debug.exe",
       "args": [
-        "UDKGame",
         "-log"
       ],
       "stopAtEntry": false,
